@@ -1,0 +1,6 @@
+# 项目排除路径
+/com.atguigu.maven/target/
+/pro02-maven-web/target/
+/pro03-maven-parent/pro04-maven-module/target/
+/pro03-maven-parent/pro05-maven-module/target/
+/pro03-maven-parent/pro06-maven-module/target/

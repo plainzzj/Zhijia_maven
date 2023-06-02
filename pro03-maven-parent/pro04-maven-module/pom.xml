@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- parent： 父工程的坐标-->
+  <parent>
+    <groupId>com.atguigu.maven</groupId>
+    <artifactId>pro03-maven-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <!-- 子工程的坐标如果和父工程一样，可以省略-->
+  <!-- <groupId>com.atguigu.com</groupId> -->
+  <artifactId>pro04-maven-module</artifactId>
+  <!-- <version>1.0-SNAPSHOT</version> -->
+  <name>pro04-maven-module</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+      </dependency>
+
+    <!-- 子工程引用父工程中的依赖信息时，可以把版本号去掉。	-->
+    <!-- 把版本号去掉就表示子工程中这个依赖的版本由父工程决定。 -->
+    <!-- 具体来说是由父工程的dependencyManagement来决定。 -->
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+    </dependency>
+
+    <!--测试聚合可以一键安装： 在4中依赖5-->
+    <dependency>
+      <groupId>com.atguigu.maven</groupId>
+      <artifactId>pro05-maven-module</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+
+  </dependencies>
+</project>

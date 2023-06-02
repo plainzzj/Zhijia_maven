@@ -1,0 +1,57 @@
+<!-- 根标签： project 工程-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+  <!-- 
+    具体的子标签
+    modelVersion -> 从Maven2开始固定为4.0.0 代表当前 pom.xml 所采用的标签结构
+    groupId
+    artifactId
+    version -> 以上为坐标信息
+    packaging -> 打包方式，默认为jar（Java工程）
+      war: web工程
+      pom: 管理其他工程的工程
+    name
+    url
+    properties -> 定义属性值
+      project.build.sourceEncoding -> 构建过程中读取源码时使用的字符集
+    dependencies -> 定义依赖信息，可以包含多个dependency子标签
+      dependency -> 定义具体依赖信息（通过坐标）
+        groupId
+        artifactId
+        version
+        scope -> 配置当前依赖的范围
+  -->
+  <modelVersion>4.0.0</modelVersion>
+  <!-- 在本地仓库中安装后对应的路径：
+  Z:\Maven\localRepository\com\atguigu\maven\com.atguigu.maven\1.0-SNAPSHOT\com.atguigu.maven-1.0-SNAPSHOT.jar
+  -->
+  <groupId>com.atguigu.maven</groupId>
+  <artifactId>com.atguigu.maven</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>com.atguigu.maven</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- 以 compare 范围导入spring-core依赖-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>4.0.0.RELEASE</version>
+    </dependency>
+
+
+  </dependencies>
+</project>
